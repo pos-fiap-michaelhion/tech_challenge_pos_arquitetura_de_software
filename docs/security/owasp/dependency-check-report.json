@@ -5,11 +5,11 @@
         "dataSource": [
 {
                 "name": "NVD API Last Checked",
-                "timestamp": "2026-08-29T21:26:33-03"
+                "timestamp": "2026-11-01T19:54:14-03"
             }
 ,{
                 "name": "NVD API Last Modified",
-                "timestamp": "2026-08-30T00:16:34Z"
+                "timestamp": "2026-11-01T22:17:48Z"
             }
         ]
 
@@ -17,7 +17,7 @@
     },
     "projectInfo": {
         "name": "oficina360",
-"groupID":"com.techchallenger","artifactID":"oficina360","version":"0.0.1-SNAPSHOT",        "reportDate": "2026-08-30T00:29:02.950636200Z",
+"groupID":"com.techchallenger","artifactID":"oficina360","version":"0.0.1-SNAPSHOT",        "reportDate": "2026-11-01T22:54:35.792630700Z",
         "credits": {
             "NVD": "This product uses the NVD API but is not endorsed or certified by the NVD. This report contains data retrieved from the National Vulnerability Database: https://nvd.nist.gov",
             "CISA": "This report may contain data retrieved from the CISA Known Exploited Vulnerability Catalog: https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
@@ -37,7 +37,7 @@
                 "oficina360:runtime"
             ]
             ,"includedBy": [
-                { "reference":"pkg:maven\/org.springframework.boot\/spring-boot-starter-actuator@4.1.1" }
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
             ]
             ,"evidenceCollected": {
                 "vendorEvidence": [
@@ -12630,7 +12630,7 @@
                 "oficina360:compile"
             ]
             ,"includedBy": [
-                { "reference":"pkg:maven\/org.springframework.boot\/spring-boot-starter-actuator@4.1.1" }
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
             ]
             ,"evidenceCollected": {
                 "vendorEvidence": [
@@ -13856,6 +13856,395 @@
             ]
         },{
             "isVirtual": false,
+            "fileName": "logstash-logback-encoder-8.1.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\net\\logstash\\logback\\logstash-logback-encoder\\8.1\\logstash-logback-encoder-8.1.jar"
+,"md5": "08a18cd6a4737221773acc1d2a5c9e3a",
+            "sha1": "aca81cdb03c48f4e0213d3e351ab1befafa9991e",
+            "sha256": "2716cb6a3e83ec2f296395b8752063f502d10a90de1a88f711f06ae5b6ecefb7","description": "Provides logback encoders, layouts, and appenders to log in JSON and other formats supported by Jackson","license": "Apache License, Version 2.0: http:\/\/www.apache.org\/licenses\/LICENSE-2.0\nMIT License: http:\/\/www.slf4j.org\/license.html"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/com.techchallenger\/oficina360@0.0.1-SNAPSHOT" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "logstash-logback-encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "logback"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "logstash"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "net"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "logstash.logback.encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "net.logstash.logback.logstash-logback-encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "logstash-logback-encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "logstash-logback-encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "lusis.org+github.com@gmail.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "neil.prosser@gmail.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "brenuart"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "lusis"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "neilprosser"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "philsttr"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Bertrand Renuart"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "John E. Vincent"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Neil Prosser"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Phil Clay"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer org",
+                            "value": "Nokia"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer org URL",
+                            "value": "http:\/\/music.nokia.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "net.logstash.logback"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Logstash Logback Encoder"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "url",
+                            "value": "logfellow\/logstash-logback-encoder"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "logstash-logback-encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "logback"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "logstash"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "net"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "logstash.logback.encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Logstash Logback Encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "net.logstash.logback.logstash-logback-encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "logstash-logback-encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "lusis.org+github.com@gmail.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "neil.prosser@gmail.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "brenuart"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "lusis"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "neilprosser"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "philsttr"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Bertrand Renuart"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "John E. Vincent"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Neil Prosser"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Phil Clay"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer org",
+                            "value": "Nokia"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer org URL",
+                            "value": "http:\/\/music.nokia.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "net.logstash.logback"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Logstash Logback Encoder"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "url",
+                            "value": "logfellow\/logstash-logback-encoder"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "8.1"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "8.1"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/net.logstash.logback\/logstash-logback-encoder@8.1"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
             "fileName": "lombok-1.18.46.jar: mavenEcjBootstrapAgent.jar",
             "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\projectlombok\\lombok\\1.18.46\\lombok-1.18.46.jar\\lombok\\launch\\mavenEcjBootstrapAgent.jar"
 ,"md5": "8b80305e4846088e139701372844e637",
@@ -14716,7 +15105,7 @@
                 "oficina360:compile"
             ]
             ,"includedBy": [
-                { "reference":"pkg:maven\/org.springframework.boot\/spring-boot-starter-actuator@4.1.1" }
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
             ]
             ,"evidenceCollected": {
                 "vendorEvidence": [
@@ -16232,6 +16621,500 @@
             ]
         },{
             "isVirtual": false,
+            "fileName": "micrometer-registry-prometheus-1.17.1.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\micrometer\\micrometer-registry-prometheus\\1.17.1\\micrometer-registry-prometheus-1.17.1.jar"
+,"md5": "2d25d73f9a8755694cbf01323649870e",
+            "sha1": "fa0a245ad6fee4763264dc76d2b3e0166a5f5e47",
+            "sha256": "ac24d43f123e103828a23a86f092a8709d87d309ad3212e798305654e951a8ce","description": "MeterRegistry implementation for Prometheus using io.prometheus:prometheus-metrics-core. If you have compatibility issues with this module, you can go back to io.micrometer:micrometer-registry-prometheus-simpleclient that uses io.prometheus:simpleclient_common.","license": "The Apache Software License, Version 2.0: http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/com.techchallenger\/oficina360@0.0.1-SNAPSHOT" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "micrometer-registry-prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "micrometer"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "micrometer.registry.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "branch",
+                            "value": "release\/1.17.1"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-date",
+                            "value": "2026-08-17_07:25:40"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-date-utc",
+                            "value": "2026-08-17T07:25:40.737685126Z"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-host",
+                            "value": "https:\/\/github.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-job",
+                            "value": "build-release"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-number",
+                            "value": "50"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-timezone",
+                            "value": "Etc\/UTC"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-url",
+                            "value": "https:\/\/github.com\/micrometer-metrics\/micrometer-commercial\/actions\/runs\/32005692132"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "built-os",
+                            "value": "Linux"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "built-status",
+                            "value": "integration"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "micrometer-registry-prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "change",
+                            "value": "f1b1924"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "full-change",
+                            "value": "f1b1924bc8821adbc841df69eb433c933e17e1a5"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "module-email",
+                            "value": "tludwig@vmware.com,jivanov@vmware.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "module-origin",
+                            "value": "https:\/\/github.com\/micrometer-metrics\/micrometer-commercial.git"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "module-owner",
+                            "value": "tludwig@vmware.com,jivanov@vmware.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "micrometer-registry-prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "micrometer-registry-prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "jivanov@vmware.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "tludwig@vmware.com"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "jonatan-ivanov"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "shakuzen"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Jonatan Ivanov"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Tommy Ludwig"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.micrometer"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "micrometer-registry-prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "url",
+                            "value": "micrometer-metrics\/micrometer-commercial"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "micrometer-registry-prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "micrometer"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "micrometer.registry.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "branch",
+                            "value": "release\/1.17.1"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-date",
+                            "value": "2026-08-17_07:25:40"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-date-utc",
+                            "value": "2026-08-17T07:25:40.737685126Z"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-host",
+                            "value": "https:\/\/github.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-job",
+                            "value": "build-release"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-number",
+                            "value": "50"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-timezone",
+                            "value": "Etc\/UTC"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-url",
+                            "value": "https:\/\/github.com\/micrometer-metrics\/micrometer-commercial\/actions\/runs\/32005692132"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "built-os",
+                            "value": "Linux"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "built-status",
+                            "value": "integration"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "micrometer-registry-prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "micrometer-registry-prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "change",
+                            "value": "f1b1924"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "full-change",
+                            "value": "f1b1924bc8821adbc841df69eb433c933e17e1a5"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "Manifest",
+                            "name": "Implementation-Title",
+                            "value": "io.micrometer#micrometer-registry-prometheus;1.17.1"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "module-email",
+                            "value": "tludwig@vmware.com,jivanov@vmware.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "module-origin",
+                            "value": "https:\/\/github.com\/micrometer-metrics\/micrometer-commercial.git"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "module-owner",
+                            "value": "tludwig@vmware.com,jivanov@vmware.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "micrometer-registry-prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "jivanov@vmware.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer email",
+                            "value": "tludwig@vmware.com"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "jonatan-ivanov"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer id",
+                            "value": "shakuzen"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Jonatan Ivanov"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "developer name",
+                            "value": "Tommy Ludwig"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.micrometer"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "micrometer-registry-prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "url",
+                            "value": "micrometer-metrics\/micrometer-commercial"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.17.1"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.17.1"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Implementation-Version",
+                        "value": "1.17.1"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.17.1"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
             "fileName": "postgresql-42.7.12.jar",
             "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\postgresql\\postgresql\\42.7.12\\postgresql-42.7.12.jar"
 ,"md5": "bf3dd29ad502aeff677c4920bc6d6c9a",
@@ -16790,6 +17673,1360 @@
                 {
                     "id": "cpe:2.3:a:postgresql:postgresql_jdbc_driver:42.7.12:*:*:*:*:*:*:*"
 ,"confidence": "LOW"                }
+            ]
+        },{
+            "isVirtual": false,
+            "fileName": "prometheus-metrics-config-1.7.0.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\prometheus\\prometheus-metrics-config\\1.7.0\\prometheus-metrics-config-1.7.0.jar"
+,"md5": "dbf028406bdbb052ad97d9af6f610c2b",
+            "sha1": "739329fa28a2372515f14c875d4012b32e17df09",
+            "sha256": "bc9455f938df76ec4add13fe31903a5bb583c605679a16a779d6a6c2b21218f2","description": "\n    Configuration for Prometheus metrics and exposition formats.\n  ","license": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Config"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Prometheus Metrics Config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Config"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.prometheus\/prometheus-metrics-config@1.7.0"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
+            "fileName": "prometheus-metrics-core-1.7.0.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\prometheus\\prometheus-metrics-core\\1.7.0\\prometheus-metrics-core-1.7.0.jar"
+,"md5": "649c2e0c6952f28a7d0062f8be03ec4c",
+            "sha1": "04779014a044c3c300d8ec36eb2a51ecb7541887",
+            "sha256": "f9e5f1c8a20073347c88941d43e8c64ae6810afe0a61cbfe9c2f4efffe72808b","description": "\n    Core Prometheus metric types\n  ","license": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Core"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Prometheus Metrics Core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Core"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.prometheus\/prometheus-metrics-core@1.7.0"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
+            "fileName": "prometheus-metrics-exposition-formats-1.7.0.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\prometheus\\prometheus-metrics-exposition-formats\\1.7.0\\prometheus-metrics-exposition-formats-1.7.0.jar"
+,"md5": "8335ee920c112f79fe7ff452f95fd09c",
+            "sha1": "e1023556dc6cdcb7142c2635b586782610fdab10",
+            "sha256": "7352ca8b50e861eca3567ceb332e9590a06742a9d177cff54e52c8cff4c4fb90","description": "\n    Prometheus exposition formats.\n  ","license": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:runtime"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-exposition-formats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "expositionformats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.expositionformats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-exposition-formats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-exposition-formats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-exposition-formats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Exposition Formats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-exposition-formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "expositionformats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.expositionformats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Prometheus Metrics Exposition Formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-exposition-formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-exposition-formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Exposition Formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.prometheus\/prometheus-metrics-exposition-formats@1.7.0"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
+            "fileName": "prometheus-metrics-exposition-textformats-1.7.0.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\prometheus\\prometheus-metrics-exposition-textformats\\1.7.0\\prometheus-metrics-exposition-textformats-1.7.0.jar"
+,"md5": "04c4272da97621f935f4c844fac2b5e5",
+            "sha1": "c94fc72615c1943e01e4bf4a8451a9c7e91ac213",
+            "sha256": "7e49065895a35181c57f2c3c6d07b7b3f9b5754cd6422e0a7bd793f20a29c28a","description": "\n    Prometheus exposition text formats.\n  ","license": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:runtime"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-exposition-textformats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.writer.text"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-exposition-textformats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-exposition-textformats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-exposition-textformats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Exposition Text Formats"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-exposition-textformats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.writer.text"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Prometheus Metrics Exposition Text Formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-exposition-textformats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-exposition-textformats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Exposition Text Formats"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.prometheus\/prometheus-metrics-exposition-textformats@1.7.0"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
+            "fileName": "prometheus-metrics-model-1.7.0.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\prometheus\\prometheus-metrics-model\\1.7.0\\prometheus-metrics-model-1.7.0.jar"
+,"md5": "f0aaf83b956c7cc7bdbcbdd217830a1a",
+            "sha1": "d953f718cf1f62af34f7bf2545645c1f6f4698d5",
+            "sha256": "e6d94538f8735c4161c36a660298f3a0fa8e4b281ceaf209723aaf9e212d292d","description": "\n    Data model for read-only immutable Prometheus metrics snapshots.\n  ","license": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Model"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Prometheus Metrics Model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Model"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "client_java"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.prometheus\/prometheus-metrics-model@1.7.0"
+,"confidence": "HIGH"                    }
+            ]
+        },{
+            "isVirtual": false,
+            "fileName": "prometheus-metrics-tracer-common-1.7.0.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\io\\prometheus\\prometheus-metrics-tracer-common\\1.7.0\\prometheus-metrics-tracer-common-1.7.0.jar"
+,"md5": "f017e9534666d792d219959180da4a3f",
+            "sha1": "2feee6463c9ad7a6ef142020c3379835ffeb6701",
+            "sha256": "b7e8699032f0f1501556eeafd20fcfdd89b355f5d22b6d8361d723d467d88ed4","description": "\n    Common Module for Prometheus integrations with distributed tracing libraries.\n  ","license": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"includedBy": [
+                { "reference":"pkg:maven\/io.micrometer\/micrometer-registry-prometheus@1.17.1" }
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-tracer-common"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "tracer"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.tracer.common"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-tracer-common"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-tracer-common"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-tracer-common"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Tracer Common"
+                        }
+,{
+                            "type": "vendor",
+                            "confidence": "LOW",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "prometheus-metrics-tracer"
+                        }
+                ],
+                "productEvidence": [
+{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "file",
+                            "name": "name",
+                            "value": "prometheus-metrics-tracer-common"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "io"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "metrics"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "jar",
+                            "name": "package name",
+                            "value": "tracer"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "automatic-module-name",
+                            "value": "io.prometheus.metrics.tracer.common"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "LOW",
+                            "source": "Manifest",
+                            "name": "build-jdk-spec",
+                            "value": "21"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "Bundle-Name",
+                            "value": "Prometheus Metrics Tracer Common"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "Manifest",
+                            "name": "bundle-symbolicname",
+                            "value": "io.prometheus.metrics-tracer-common"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "artifactid",
+                            "value": "prometheus-metrics-tracer-common"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGHEST",
+                            "source": "pom",
+                            "name": "groupid",
+                            "value": "io.prometheus"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "HIGH",
+                            "source": "pom",
+                            "name": "name",
+                            "value": "Prometheus Metrics Tracer Common"
+                    }
+,{
+                            "type": "product",
+                            "confidence": "MEDIUM",
+                            "source": "pom",
+                            "name": "parent-artifactid",
+                            "value": "prometheus-metrics-tracer"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGH",
+                        "source": "Manifest",
+                        "name": "Bundle-Version",
+                        "value": "1.7.0"
+                    }
+,                    {
+                        "type": "version",
+                        "confidence": "HIGHEST",
+                        "source": "pom",
+                        "name": "version",
+                        "value": "1.7.0"
+                    }
+                ]
+            }
+                ,"packages": [
+                    {
+                        "id": "pkg:maven\/io.prometheus\/prometheus-metrics-tracer-common@1.7.0"
+,"confidence": "HIGH"                    }
             ]
         },{
             "isVirtual": false,
@@ -17354,6 +19591,34 @@
             ,"includedBy": [
                 { "reference":"pkg:maven\/org.springframework.boot\/spring-boot-starter-flyway@4.1.1" }
             ]
+            ,"relatedDependencies": [
+  {
+                    "isVirtual": false,
+                    "fileName": "spring-boot-data-jpa-4.1.1.jar",
+                    "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\springframework\\boot\\spring-boot-data-jpa\\4.1.1\\spring-boot-data-jpa-4.1.1.jar"
+,"sha256": "19860139ccffcdeb27ea5a6c96bc2977bbc586f0aa2e5bb64eca49602e9de95c",
+                    "sha1": "6bb039309f539b4f9b14e7398eafcca08a60fd23",
+                    "md5": "37d401f9e5ffe38ddeddd3e5f79b9153",
+                    "packageIds": [
+                            {
+                                "id": "pkg:maven/org.springframework.boot/spring-boot-data-jpa@4.1.1"
+                            }
+                    ]
+                }
+ , {
+                    "isVirtual": false,
+                    "fileName": "spring-boot-starter-data-jpa-4.1.1.jar",
+                    "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\springframework\\boot\\spring-boot-starter-data-jpa\\4.1.1\\spring-boot-starter-data-jpa-4.1.1.jar"
+,"sha256": "88eb7c8a4d1af4333f40e9c8d53835fd306600ae8a078d633b673f491fcba79a",
+                    "sha1": "e76828cd073e4eb1ae72fbcd07bf32c76baa76f6",
+                    "md5": "3fee409de13036b8697a08d94cca97dc",
+                    "packageIds": [
+                            {
+                                "id": "pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@4.1.1"
+                            }
+                    ]
+                }
+            ]
             ,"evidenceCollected": {
                 "vendorEvidence": [
 {
@@ -17734,19 +19999,6 @@
                 }
  , {
                     "isVirtual": false,
-                    "fileName": "spring-boot-data-jpa-4.1.1.jar",
-                    "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\springframework\\boot\\spring-boot-data-jpa\\4.1.1\\spring-boot-data-jpa-4.1.1.jar"
-,"sha256": "19860139ccffcdeb27ea5a6c96bc2977bbc586f0aa2e5bb64eca49602e9de95c",
-                    "sha1": "6bb039309f539b4f9b14e7398eafcca08a60fd23",
-                    "md5": "37d401f9e5ffe38ddeddd3e5f79b9153",
-                    "packageIds": [
-                            {
-                                "id": "pkg:maven/org.springframework.boot/spring-boot-data-jpa@4.1.1"
-                            }
-                    ]
-                }
- , {
-                    "isVirtual": false,
                     "fileName": "spring-boot-flyway-4.1.1.jar",
                     "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\springframework\\boot\\spring-boot-flyway\\4.1.1\\spring-boot-flyway-4.1.1.jar"
 ,"sha256": "61db32d08f2b1b04cf006e916575da22ecee0a2e0bb0604aca26c04f7bd4aa0e",
@@ -17950,19 +20202,6 @@
                     "packageIds": [
                             {
                                 "id": "pkg:maven/org.springframework.boot/spring-boot-starter-actuator@4.1.1"
-                            }
-                    ]
-                }
- , {
-                    "isVirtual": false,
-                    "fileName": "spring-boot-starter-data-jpa-4.1.1.jar",
-                    "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\springframework\\boot\\spring-boot-starter-data-jpa\\4.1.1\\spring-boot-starter-data-jpa-4.1.1.jar"
-,"sha256": "88eb7c8a4d1af4333f40e9c8d53835fd306600ae8a078d633b673f491fcba79a",
-                    "sha1": "e76828cd073e4eb1ae72fbcd07bf32c76baa76f6",
-                    "md5": "3fee409de13036b8697a08d94cca97dc",
-                    "packageIds": [
-                            {
-                                "id": "pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@4.1.1"
                             }
                     ]
                 }
@@ -19414,6 +21653,9 @@
                 {
                     "id": "cpe:2.3:a:pivotal_software:spring_data_jpa:4.1.1:*:*:*:*:*:*:*"
 ,"confidence": "HIGHEST","url": "https:\/\/nvd.nist.gov\/vuln\/search#\/nvd\/home?sortOrder=3&sortDirection=2&cpeFilterMode=applicability&resultType=records&cpeName=cpe%3A2.3%3Aa%3Apivotal_software%3Aspring_data_jpa%3A4.1.1%3A%2A%3A%2A%3A%2A%3A%2A%3A%2A%3A%2A%3A%2A"                }
+,                {
+                    "id": "cpe:2.3:a:vmware:spring_data_jpa:4.1.1:*:*:*:*:*:*:*"
+,"confidence": "HIGHEST","url": "https:\/\/nvd.nist.gov\/vuln\/search#\/nvd\/home?sortOrder=3&sortDirection=2&cpeFilterMode=applicability&resultType=records&cpeName=cpe%3A2.3%3Aa%3Avmware%3Aspring_data_jpa%3A4.1.1%3A%2A%3A%2A%3A%2A%3A%2A%3A%2A%3A%2A%3A%2A"                }
             ]
         },{
             "isVirtual": false,
@@ -20669,8 +22911,8 @@
             ]
         },{
             "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: oauth2-redirect.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\oauth2-redirect.js"
+            "fileName": "swagger-ui-5.34.1.jar: oauth2-redirect.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\oauth2-redirect.js"
 ,"md5": "d170ff78b648354d9005ff7dce2b141d",
             "sha1": "d9df3eb79cf8ab7d1bd9df14d3264350c270b51b",
             "sha256": "a5c8a34e09e49737382cc5019446eec7c3db3461963fc5bfe448361d3c5549e9"            ,"projectReferences": [
@@ -20687,8 +22929,8 @@
 
         },{
             "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: swagger-initializer.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\swagger-initializer.js"
+            "fileName": "swagger-ui-5.34.1.jar: swagger-initializer.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\swagger-initializer.js"
 ,"md5": "ff995915f51c051c59fed883f5d7be28",
             "sha1": "c434dd8fbfa625a10351681d3037ee79d5682207",
             "sha256": "a895034f24f12d7cd81ec47c98da4f15721d9d9a8d2405f22f21704821f81d02"            ,"projectReferences": [
@@ -20705,75 +22947,11 @@
 
         },{
             "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: swagger-ui-bundle.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\swagger-ui-bundle.js"
-,"md5": "27228119a5461b532df22e2f0d44a3e1",
-            "sha1": "3968e17744e5b239d47ba4da85304f56543368a0",
-            "sha256": "fcb81e2c79e7e3b76ddb9bd7fc791552045040fde05c19d3f98f9213e7f7724d"            ,"projectReferences": [
-                "oficina360:compile"
-            ]
-            ,"evidenceCollected": {
-                "vendorEvidence": [
-{
-                            "type": "vendor",
-                            "confidence": "HIGH",
-                            "source": "RetireJS",
-                            "name": "name",
-                            "value": "DOMPurify"
-                        }
-                ],
-                "productEvidence": [
-{
-                            "type": "product",
-                            "confidence": "HIGH",
-                            "source": "RetireJS",
-                            "name": "name",
-                            "value": "DOMPurify"
-                    }
-                ],
-                "versionEvidence": [
-                    {
-                        "type": "version",
-                        "confidence": "HIGH",
-                        "source": "RetireJS",
-                        "name": "version",
-                        "value": "3.4.12"
-                    }
-                ]
-            }
-                ,"packages": [
-                    {
-                        "id": "pkg:javascript\/DOMPurify@3.4.12"
-,"confidence": "HIGHEST"                    }
-            ]
-            ,"vulnerabilities": [
- {
-                "source": "RETIREJS",
-                "name": "CVE-2026-75838",
-"unscored": "true", "severity" : "medium",
-                "description": "DOMPurify: IN_PLACE hook removal leaves a detached subtree executable, causing XSS",
-                "notes": "",
-                "references": [
- {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/releases\/tag\/3.4.13","name": "https:\/\/github.com\/cure53\/DOMPurify\/releases\/tag\/3.4.13"                    }, {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/security\/advisories\/GHSA-55q2-fjhq-7xh7","name": "https:\/\/github.com\/cure53\/DOMPurify\/security\/advisories\/GHSA-55q2-fjhq-7xh7"                    }, {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/commit\/3067f7746769","name": "https:\/\/github.com\/cure53\/DOMPurify\/commit\/3067f7746769"                    }, {
-                        "source": "ghsaId"
-,"name": "GHSA-55q2-fjhq-7xh7"                    }, {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/pull\/1557","name": "https:\/\/github.com\/cure53\/DOMPurify\/pull\/1557"                    }                ],
-                "vulnerableSoftware": [
-                ]
-                }            ]        },{
-            "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: swagger-ui-es-bundle-core.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\swagger-ui-es-bundle-core.js"
-,"md5": "8bb2d7250c029c42be4c97bf15ee0370",
-            "sha1": "a4581259f53e32bb8a160169911e8d16fa7e54e4",
-            "sha256": "703dfeb7cc694d2d51ee6fc1b52ff6c69611fbb771c745fc0cf3579540cb9ecd"            ,"projectReferences": [
+            "fileName": "swagger-ui-5.34.1.jar: swagger-ui-bundle.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\swagger-ui-bundle.js"
+,"md5": "7b4111b251d0b99a2d0c7e3875431157",
+            "sha1": "7d113b6e633b7921257d8cbf74a0f4978765016a",
+            "sha256": "36eeb4d5640b9c036b1d0f854499af1cceebbdb260b790a03a18be5e8488fbf5"            ,"projectReferences": [
                 "oficina360:compile"
             ]
             ,"evidenceCollected": {
@@ -20787,75 +22965,11 @@
 
         },{
             "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: swagger-ui-es-bundle.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\swagger-ui-es-bundle.js"
-,"md5": "4c30925365ec6be5cdf03936ba410a42",
-            "sha1": "a5d1dad7f33c9fb7511336844a21b301743dff32",
-            "sha256": "cb70c5c645ff1f7a85061767e7e18f46febb63ba7364ac8cac60605a9ef854ee"            ,"projectReferences": [
-                "oficina360:compile"
-            ]
-            ,"evidenceCollected": {
-                "vendorEvidence": [
-{
-                            "type": "vendor",
-                            "confidence": "HIGH",
-                            "source": "RetireJS",
-                            "name": "name",
-                            "value": "DOMPurify"
-                        }
-                ],
-                "productEvidence": [
-{
-                            "type": "product",
-                            "confidence": "HIGH",
-                            "source": "RetireJS",
-                            "name": "name",
-                            "value": "DOMPurify"
-                    }
-                ],
-                "versionEvidence": [
-                    {
-                        "type": "version",
-                        "confidence": "HIGH",
-                        "source": "RetireJS",
-                        "name": "version",
-                        "value": "3.4.12"
-                    }
-                ]
-            }
-                ,"packages": [
-                    {
-                        "id": "pkg:javascript\/DOMPurify@3.4.12"
-,"confidence": "HIGHEST"                    }
-            ]
-            ,"vulnerabilities": [
- {
-                "source": "RETIREJS",
-                "name": "CVE-2026-75838",
-"unscored": "true", "severity" : "medium",
-                "description": "DOMPurify: IN_PLACE hook removal leaves a detached subtree executable, causing XSS",
-                "notes": "",
-                "references": [
- {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/releases\/tag\/3.4.13","name": "https:\/\/github.com\/cure53\/DOMPurify\/releases\/tag\/3.4.13"                    }, {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/security\/advisories\/GHSA-55q2-fjhq-7xh7","name": "https:\/\/github.com\/cure53\/DOMPurify\/security\/advisories\/GHSA-55q2-fjhq-7xh7"                    }, {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/commit\/3067f7746769","name": "https:\/\/github.com\/cure53\/DOMPurify\/commit\/3067f7746769"                    }, {
-                        "source": "ghsaId"
-,"name": "GHSA-55q2-fjhq-7xh7"                    }, {
-                        "source": "info"
-,"url": "https:\/\/github.com\/cure53\/DOMPurify\/pull\/1557","name": "https:\/\/github.com\/cure53\/DOMPurify\/pull\/1557"                    }                ],
-                "vulnerableSoftware": [
-                ]
-                }            ]        },{
-            "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: swagger-ui-standalone-preset.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\swagger-ui-standalone-preset.js"
-,"md5": "0b406aa3331599de8acfb652569cb89b",
-            "sha1": "efae25a33bade469332257756ac83fe0d9ad4d4c",
-            "sha256": "ea327dbf3a0a047290f6b9cf4e4b86a63bb8534b43d416c6c07ee8d14269d9ff"            ,"projectReferences": [
+            "fileName": "swagger-ui-5.34.1.jar: swagger-ui-es-bundle-core.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\swagger-ui-es-bundle-core.js"
+,"md5": "ddf176ccf38847ece32962da0afea772",
+            "sha1": "f6b5e462b2c4a812738e820408561a8b3fbdcb8a",
+            "sha256": "280e31ba334fdd40bf3eaaca3bdd863838c97d3411d98ae56c783b30092e05f9"            ,"projectReferences": [
                 "oficina360:compile"
             ]
             ,"evidenceCollected": {
@@ -20869,11 +22983,11 @@
 
         },{
             "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar: swagger-ui.js",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.32.11\\swagger-ui.js"
-,"md5": "df376bdfbc5279c1377fff59aebb20db",
-            "sha1": "57ab654385715a378a408d4611f8d1a7f1b17a97",
-            "sha256": "2b3677c7626c4e461019ce902e3115ecc36ba9a44737368c0b3b65bb01211eb4"            ,"projectReferences": [
+            "fileName": "swagger-ui-5.34.1.jar: swagger-ui-es-bundle.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\swagger-ui-es-bundle.js"
+,"md5": "0b05e43737f8a58b2854ab74895ba218",
+            "sha1": "477807559af3e5839f7080e0da21e8cf53d0416c",
+            "sha256": "47d75bc5218c41b8b7e39536a6d3b254a1a75917c48ad1f6909561a301ed5cb1"            ,"projectReferences": [
                 "oficina360:compile"
             ]
             ,"evidenceCollected": {
@@ -20887,15 +23001,51 @@
 
         },{
             "isVirtual": false,
-            "fileName": "swagger-ui-5.32.11.jar",
-            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.32.11\\swagger-ui-5.32.11.jar"
-,"md5": "500b58efe655efc9b104dec24d92fd70",
-            "sha1": "87f61a7e69ca597db9d1825e6c3d03035d74ee26",
-            "sha256": "046a4e08502c6244d251278abfd4bcf9db193f79517fc882f4efe84a31f7b1c1","description": "WebJar for Swagger UI","license": "Apache-2.0"            ,"projectReferences": [
+            "fileName": "swagger-ui-5.34.1.jar: swagger-ui-standalone-preset.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\swagger-ui-standalone-preset.js"
+,"md5": "a90d4e3f4b86f0cbc1a903825fe420ec",
+            "sha1": "132f6ef59af46a936d572e54a947f3b188fcd4db",
+            "sha256": "5243d492e14505e0cab87ac8b0195d0e615943e651743b2b698450a46eb470be"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+                ],
+                "productEvidence": [
+                ],
+                "versionEvidence": [
+                ]
+            }
+
+        },{
+            "isVirtual": false,
+            "fileName": "swagger-ui-5.34.1.jar: swagger-ui.js",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar\\META-INF\\resources\\webjars\\swagger-ui\\5.34.1\\swagger-ui.js"
+,"md5": "f39e9b53abc69148cd3a82a8620f0d6e",
+            "sha1": "91b30e00ed7541dc7298d57de79b16cf319a036a",
+            "sha256": "2cf0922d011554c091344a681be20f043a9f4e4802cd481931109001a77cb747"            ,"projectReferences": [
+                "oficina360:compile"
+            ]
+            ,"evidenceCollected": {
+                "vendorEvidence": [
+                ],
+                "productEvidence": [
+                ],
+                "versionEvidence": [
+                ]
+            }
+
+        },{
+            "isVirtual": false,
+            "fileName": "swagger-ui-5.34.1.jar",
+            "filePath": "C:\\Users\\trabalho\\.m2\\repository\\org\\webjars\\swagger-ui\\5.34.1\\swagger-ui-5.34.1.jar"
+,"md5": "186703041f307957a48420b895d7ff2d",
+            "sha1": "84bd35757e584574f6b1b7e57c5998b817017b4b",
+            "sha256": "b57f6379a9498c94160d5fd413984757b04d1683ac757d7ba0b6d9b4ba0daee2","description": "WebJar for Swagger UI","license": "Apache-2.0"            ,"projectReferences": [
                 "oficina360:compile"
             ]
             ,"includedBy": [
-                { "reference":"pkg:maven\/org.springdoc\/springdoc-openapi-starter-webmvc-ui@3.1.0" }
+                { "reference":"pkg:maven\/com.techchallenger\/oficina360@0.0.1-SNAPSHOT" }
             ]
             ,"evidenceCollected": {
                 "vendorEvidence": [
@@ -21034,31 +23184,31 @@
                         "confidence": "HIGH",
                         "source": "file",
                         "name": "version",
-                        "value": "5.32.11"
+                        "value": "5.34.1"
                     }
 ,                    {
                         "type": "version",
                         "confidence": "HIGH",
                         "source": "Manifest",
                         "name": "Bundle-Version",
-                        "value": "5.32.11"
+                        "value": "5.34.1"
                     }
 ,                    {
                         "type": "version",
                         "confidence": "HIGHEST",
                         "source": "pom",
                         "name": "version",
-                        "value": "5.32.11"
+                        "value": "5.34.1"
                     }
                 ]
             }
                 ,"packages": [
                     {
-                        "id": "pkg:maven\/org.webjars\/swagger-ui@5.32.11"
+                        "id": "pkg:maven\/org.webjars\/swagger-ui@5.34.1"
 ,"confidence": "HIGH"                    }
             ]                ,"vulnerabilityIds": [
                 {
-                    "id": "cpe:2.3:a:http-swagger_project:http-swagger:5.32.11:*:*:*:*:*:*:*"
+                    "id": "cpe:2.3:a:http-swagger_project:http-swagger:5.34.1:*:*:*:*:*:*:*"
 ,"confidence": "LOW"                }
             ]
         },{
