@@ -1,0 +1,59 @@
+==================================================
+NODES
+==================================================
+NAME                         STATUS   ROLES    AGE     VERSION               INTERNAL-IP   EXTERNAL-IP     OS-IMAGE                        KERNEL-VERSION                            CONTAINER-RUNTIME
+ip-10-42-0-97.ec2.internal   Ready    <none>   2m36s   v1.36.4-eks-b9510e3   10.42.0.97    34.229.231.47   Amazon Linux 2023.12.20261012   6.18.54-121.166.amzn2023.x86_64 (amd64)   containerd://2.3.5+unknown
+
+==================================================
+NODE OBSOLETO
+==================================================
+Error from server (NotFound): nodes "ip-10-42-5-162.ec2.internal" not found
+
+==================================================
+PODS PENDENTES
+==================================================
+No resources found
+
+==================================================
+DESCRIBE AWS-NODE ANTIGO
+==================================================
+Error from server (NotFound): pods "aws-node-vswpj" not found
+
+==================================================
+DESCRIBE KUBE-PROXY ANTIGO
+==================================================
+Error from server (NotFound): pods "kube-proxy-h78tq" not found
+
+==================================================
+DAEMONSETS
+==================================================
+NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE   CONTAINERS                   IMAGES                                                                                                                                                                          SELECTOR
+aws-node     1         1         1       1            1           <none>          24m   aws-node,aws-eks-nodeagent   602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon-k8s-cni:v1.22.4-eksbuild.3,602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-network-policy-agent:v1.4.0-eksbuild.1   k8s-app=aws-node
+kube-proxy   1         1         1       1            1           <none>          24m   kube-proxy                   602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/kube-proxy:v1.36.0-eksbuild.48                                                                                                 k8s-app=kube-proxy
+
+==================================================
+NODE GROUP
+==================================================
+{
+    "Status": "ACTIVE",
+    "Desired": 1,
+    "Min": 1,
+    "Max": 1,
+    "Issues": []
+}
+
+==================================================
+AUTO SCALING GROUP
+==================================================
+{
+    "Desired": 1,
+    "Min": 1,
+    "Max": 1,
+    "Instances": [
+        {
+            "Id": "i-03bd2a8b85749cb38",
+            "State": "InService",
+            "Health": "Healthy"
+        }
+    ]
+}

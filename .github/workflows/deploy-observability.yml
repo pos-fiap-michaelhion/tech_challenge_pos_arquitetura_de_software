@@ -1,0 +1,64 @@
+name: Deploy observability
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  EKS_CLUSTER_NAME: oficina360
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Check AWS identity
+        run: aws sts get-caller-identity
+
+      - name: Configure EKS access
+        run: |
+          aws eks update-kubeconfig \
+            --name "$EKS_CLUSTER_NAME" \
+            --region "$AWS_REGION"
+
+      - name: Check cluster
+        run: kubectl get nodes
+
+      - name: Deploy observability
+        run: |
+          chmod +x observability/deploy-observability.sh
+          bash observability/deploy-observability.sh
+
+      - name: Collect diagnostics
+        if: always()
+        run: |
+          kubectl get all -n observability \
+            > observability-report.txt 2>&1 || true
+
+          echo "" >> observability-report.txt
+          echo "===== EVENTS =====" >> observability-report.txt
+
+          kubectl get events -n observability \
+            --sort-by=.lastTimestamp \
+            >> observability-report.txt 2>&1 || true
+
+          echo "" >> observability-report.txt
+          echo "===== ALLOY LOGS =====" >> observability-report.txt
+
+          kubectl logs \
+            -n observability \
+            -l app.kubernetes.io/name

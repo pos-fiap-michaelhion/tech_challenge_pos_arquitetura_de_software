@@ -1,0 +1,23 @@
+replicas: 1
+
+service:
+  type: ClusterIP
+  port: 80
+
+persistence:
+  enabled: false
+
+adminUser: admin
+adminPassword: admin123
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Loki
+        uid: loki
+        type: loki
+        access: proxy
+        url: http://loki-gateway.observability.svc.cluster.local
+        isDefault: true
+        editable: false
