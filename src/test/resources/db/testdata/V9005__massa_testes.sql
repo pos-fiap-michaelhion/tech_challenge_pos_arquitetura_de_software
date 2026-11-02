@@ -177,16 +177,23 @@ INSERT INTO USUARIO (
     DOCUMENTO
 ) VALUES
  (
-    '99999999-9999-9999-9999-999999999977',
+    '5c181b3e-7951-4485-b064-13f9ca53cb24',
      'cliente1@oficina360.com',
      '$2a$10$ATQgy75GIzx6MsDKQmijxOWrBb5oP7hu/1HBQa1slZfIVQ/fasI7e',
      'CLIENTE',
      '12345678801'
  ),
  (
-     '99999999-9999-9999-9999-999999998877',
+     'cb7167b3-1d53-40a0-a16c-8b49aac5521d',
      'cliente2@oficina360.com',
      '$2a$10$ATQgy75GIzx6MsDKQmijxOWrBb5oP7hu/1HBQa1slZfIVQ/fasI7e',
      'CLIENTE',
      '98765432100'
+ ),
+ (
+     '051f5a9a-1273-4d4f-8d68-97ded171e33f',
+     'cliente3@oficina360.com',
+     '$2a$10$ATQgy75GIzx6MsDKQmijxOWrBb5oP7hu/1HBQa1slZfIVQ/fasI7e',
+     'CLIENTE',
+     '12345678901'
  );

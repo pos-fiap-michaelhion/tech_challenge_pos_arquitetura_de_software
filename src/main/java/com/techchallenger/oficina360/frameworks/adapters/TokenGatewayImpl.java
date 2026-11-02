@@ -32,7 +32,7 @@ public class TokenGatewayImpl implements TokenGateway {
 
 		return JWT.create()
 				.withIssuer(issuer)
-				.withSubject(usuario.getEmail())
+				.withSubject(usuario.getDocumento())
 				.withClaim("role", usuario.getRole())
 				.withExpiresAt(dataExpiracao())
 				.sign(algorithm);

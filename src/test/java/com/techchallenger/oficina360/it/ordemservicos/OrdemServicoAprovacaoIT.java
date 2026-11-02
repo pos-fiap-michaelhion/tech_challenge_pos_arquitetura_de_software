@@ -1,5 +1,7 @@
 package com.techchallenger.oficina360.it.ordemservicos;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.jayway.jsonpath.JsonPath;
 import com.techchallenger.oficina360.dominio.Estoque;
 import com.techchallenger.oficina360.frameworks.dtos.ordemservico.AprovacaoOrdemServicoDTO;
@@ -90,5 +92,23 @@ public class OrdemServicoAprovacaoIT extends BaseIT {
 				id)), token)
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(aprovacaoOrdemServicoDTO)));
+	}
+
+	@Test
+	void deveGerarTokenDoClienteComDocumentoNoSubject() {
+		String token = tokenCliente();
+
+		DecodedJWT jwt = JWT.decode(token);
+
+		assertAll(
+				() -> assertEquals(
+						"12345678901",
+						jwt.getSubject()
+				),
+				() -> assertEquals(
+						"CLIENTE",
+						jwt.getClaim("role").asString()
+				)
+		);
 	}
 }

@@ -104,9 +104,9 @@ class JwtAuthenticationFilterTest {
                 .thenReturn("Bearer token-valido");
 
         when(tokenGateway.validarTokenEObterSubject("token-valido"))
-                .thenReturn(EMAIL);
+                .thenReturn(DOCUMENTO);
 
-        when(usuarioGateway.findByEmail(EMAIL))
+        when(usuarioGateway.findByDocumento(DOCUMENTO))
                 .thenReturn(Optional.of(usuario));
 
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
@@ -121,7 +121,7 @@ class JwtAuthenticationFilterTest {
                 .validarTokenEObterSubject("token-valido");
 
         verify(usuarioGateway, times(1))
-                .findByEmail(EMAIL);
+                .findByDocumento(DOCUMENTO);
 
         verify(filterChain, times(1))
                 .doFilter(request, response);
@@ -133,9 +133,9 @@ class JwtAuthenticationFilterTest {
                 .thenReturn("Bearer token-valido");
 
         when(tokenGateway.validarTokenEObterSubject("token-valido"))
-                .thenReturn(EMAIL);
+                .thenReturn(DOCUMENTO);
 
-        when(usuarioGateway.findByEmail(EMAIL))
+        when(usuarioGateway.findByDocumento(DOCUMENTO))
                 .thenReturn(Optional.empty());
 
         jwtAuthenticationFilter.doFilterInternal(request, response, filterChain);
@@ -146,7 +146,7 @@ class JwtAuthenticationFilterTest {
                 .validarTokenEObterSubject("token-valido");
 
         verify(usuarioGateway, times(1))
-                .findByEmail(EMAIL);
+                .findByDocumento(DOCUMENTO);
 
         verify(filterChain, times(1))
                 .doFilter(request, response);

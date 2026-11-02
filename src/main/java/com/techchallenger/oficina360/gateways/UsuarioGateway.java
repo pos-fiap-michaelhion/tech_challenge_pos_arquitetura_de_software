@@ -10,6 +10,8 @@ public interface UsuarioGateway {
 
     Optional<Usuario> findByEmail(String email);
 
+    Optional<Usuario> findByDocumento(String documento);
+
     boolean existsByEmail(String email);
 
     Usuario save(Usuario usuario);

@@ -29,12 +29,12 @@ spec:
     spec:
       containers:
         - name: oficina360-api
-          image: michaelhion/oficina360:latest
+          image: oficina360
           imagePullPolicy: IfNotPresent
 
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8081
               protocol: TCP
 
           env:

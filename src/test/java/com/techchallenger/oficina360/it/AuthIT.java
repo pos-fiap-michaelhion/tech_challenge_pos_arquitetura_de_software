@@ -29,7 +29,7 @@ class AuthIT {
 
 	private static final String EMAIL = "admin1@oficina360.com";
 	private static final String PASSWORD = "123456";
-	public static final String CPF = "03255014085";
+	public static final String CPF = "25231015000191";
 
 	@Autowired
 	private MockMvc mockMvc;

@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: postgres-service
+  namespace: oficina360
+
+spec:
+  ports:
+    - name: postgresql
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+
+---
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+
+metadata:
+  name: postgres-service-external
+  namespace: oficina360
+
+  labels:
+    kubernetes.io/service-name: postgres-service
+
+addressType: IPv4
+
+ports:
+  - name: postgresql
+    protocol: TCP
+    port: 5432
+
+endpoints:
+  - addresses:
+      - 172.25.0.3
+
+    conditions:
+      ready: true

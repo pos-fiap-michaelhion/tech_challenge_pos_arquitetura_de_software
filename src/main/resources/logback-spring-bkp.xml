@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <springProperty
+            scope="context"
+            name="applicationName"
+            source="spring.application.name"
+            defaultValue="oficina360-api"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+
+            <providers>
+
+                <timestamp>
+                    <fieldName>timestamp</fieldName>
+                </timestamp>
+
+                <logLevel>
+                    <fieldName>level</fieldName>
+                </logLevel>
+
+                <loggerName>
+                    <fieldName>logger</fieldName>
+                </loggerName>
+
+                <threadName>
+                    <fieldName>thread</fieldName>
+                </threadName>
+
+                <mdc>
+                    <includeMdcKeyName>requestId</includeMdcKeyName>
+                </mdc>
+
+                <globalCustomFields>
+                    {
+                    "service": "${applicationName}"
+                    }
+                </globalCustomFields>
+
+                <message/>
+
+                <stackTrace/>
+
+            </providers>
+
+        </encoder>
+
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

@@ -29,6 +29,13 @@ public class UsuarioGatewayImpl implements UsuarioGateway {
 	}
 
 	@Override
+	public Optional<Usuario> findByDocumento(String documento) {
+		return repository
+				.findByDocumento(documento)
+				.map(UsuarioDTOMapper::toDomain);
+	}
+
+	@Override
 	public boolean existsByEmail(String email) {
 		return repository.existsByEmail(email);
 	}

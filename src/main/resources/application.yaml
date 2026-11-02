@@ -1,3 +1,5 @@
+server:
+  port: ${PORT:8081}
 spring:
   application:
     name: oficina360
@@ -51,7 +53,7 @@ api:
   security:
     jwt:
       secret: ${JWT_SECRET:oficina360-secret-key-dev}
-      issuer: oficina360-api
+      issuer: ${JWT_ISSUER:oficina360-auth}
       expiration-hours: 2
 
 app:

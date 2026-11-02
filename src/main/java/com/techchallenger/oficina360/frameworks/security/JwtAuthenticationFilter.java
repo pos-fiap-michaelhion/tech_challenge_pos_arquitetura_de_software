@@ -29,9 +29,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 		if (token != null) {
 
-			String email = tokenGateway.validarTokenEObterSubject(token);
+			String documento = tokenGateway.validarTokenEObterSubject(token);
 
-			usuarioGateway.findByEmail(email).ifPresent(usuario -> {
+			usuarioGateway.findByDocumento(documento).ifPresent(usuario -> {
 
 				UsuarioSecurityDetails principal = new UsuarioSecurityDetails(usuario);
 

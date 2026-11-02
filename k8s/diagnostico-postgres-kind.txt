@@ -1,0 +1,165 @@
+
+============================================================
+1. PRE-REQUISITOS
+============================================================
+[OK] docker encontrado
+[OK] kubectl encontrado
+
+============================================================
+2. ESTADO DOS CONTAINERS
+============================================================
+[OK] Container PostgreSQL encontrado: oficina360-postgres
+[INFO] PostgreSQL status=running running=true
+$ docker ps -a --filter name=oficina360-postgres
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
+f3979d251c26   postgres:16   "docker-entrypoint.s…"   12 minutes ago   Up 12 minutes (healthy)   0.0.0.0:5433->5432/tcp, [::]:5433->5432/tcp   oficina360-postgres
+[OK] No Kind encontrado: oficina360-control-plane
+
+============================================================
+3. PORTAS DO POSTGRESQL
+============================================================
+[INFO] Mapeamento publicado: 0.0.0.0:5433
+[::]:5433
+[INFO] Porta do host: 5433; porta interna do container: 5432
+
+============================================================
+4. SAUDE DO POSTGRESQL
+============================================================
+[OK] PostgreSQL aceita conexoes na porta interna 5432.
+
+============================================================
+5. REDES E IPS
+============================================================
+[INFO] Redes do PostgreSQL:
+kind -> 172.25.0.3
+oficina360-network -> 172.28.0.2
+
+[INFO] Redes do no Kind:
+kind -> 172.25.0.2
+
+[OK] Rede Docker compartilhada encontrada: kind
+
+============================================================
+6. TESTES DE CONECTIVIDADE
+============================================================
+[INFO] Testando do no Kind para 172.25.0.3:5432 (rede kind)
+[OK] Conexao TCP do Kind para 172.25.0.3:5432 funcionou.
+[INFO] Endereco utilizavel pelo cluster: 172.25.0.3:5432
+
+============================================================
+7. CONFIGURACAO ATUAL DO KUBERNETES
+============================================================
+[OK] Namespace encontrado: oficina360
+[INFO] ConfigMap oficina360-config: DB_HOST='host.docker.internal' DB_PORT='5432'
+[WARN] host.docker.internal esta configurado, mas o erro UnknownHostException mostra que o DNS do cluster nao o resolve.
+
+============================================================
+8. TESTE A PARTIR DE UM POD TEMPORARIO
+============================================================
+[INFO] Criando pod BusyBox temporario para testar 172.25.0.3:5432...
+[OK] Um pod Kubernetes conseguiu acessar 172.25.0.3:5432.
+
+============================================================
+9. DIAGNOSTICO E CORRECAO RECOMENDADA
+============================================================
+[OK] Diagnostico: PostgreSQL esta acessivel pelo IP 172.25.0.3 na porta interna 5432.
+[INFO] Atualize o ConfigMap com:
+kubectl patch configmap oficina360-config -n oficina360 --type merge -p '{"data":{"DB_HOST":"172.25.0.3","DB_PORT":"5432"}}'
+[INFO] Depois reinicie a aplicacao:
+kubectl rollout restart deployment/oficina360-api -n oficina360
+kubectl rollout status deployment/oficina360-api -n oficina360 --timeout=300s
+[INFO] Observacao: o IP pode mudar se o container for recriado. Para maior estabilidade, mantenha o PostgreSQL conectado a rede kind e automatize a atualizacao do EndpointSlice/ConfigMap.
+
+============================================================
+10. LOGS RECENTES
+============================================================
+$ docker logs oficina360-postgres --tail 80
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+initdb: warning: enabling "trust" authentication for local connections
+initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+waiting for server to start....2026-10-12 23:27:51.348 UTC [48] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-12 23:27:51.350 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-12 23:27:51.354 UTC [51] LOG:  database system was shut down at 2026-10-12 23:27:51 UTC
+2026-10-12 23:27:51.358 UTC [48] LOG:  database system is ready to accept connections
+ done
+server started
+CREATE DATABASE
+
+
+/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+
+waiting for server to shut down...2026-10-12 23:27:51.533 UTC [48] LOG:  received fast shutdown request
+.2026-10-12 23:27:51.535 UTC [48] LOG:  aborting any active transactions
+2026-10-12 23:27:51.536 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+2026-10-12 23:27:51.536 UTC [49] LOG:  shutting down
+2026-10-12 23:27:51.538 UTC [49] LOG:  checkpoint starting: shutdown immediate
+2026-10-12 23:27:51.586 UTC [49] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.014 s, sync=0.033 s, total=0.051 s; sync files=301, longest=0.007 s, average=0.001 s; distance=4273 kB, estimate=4273 kB; lsn=0/191F0F0, redo lsn=0/191F0F0
+2026-10-12 23:27:51.591 UTC [48] LOG:  database system is shut down
+ done
+server stopped
+
+PostgreSQL init process complete; ready for start up.
+
+2026-10-12 23:27:51.651 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-12 23:27:51.651 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-12 23:27:51.651 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-10-12 23:27:51.653 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-12 23:27:51.656 UTC [64] LOG:  database system was shut down at 2026-10-12 23:27:51 UTC
+2026-10-12 23:27:51.660 UTC [1] LOG:  database system is ready to accept connections
+2026-10-12 23:33:04.495 UTC [62] LOG:  checkpoint starting: time
+2026-10-12 23:33:10.187 UTC [62] LOG:  checkpoint complete: wrote 45 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.681 s, sync=0.004 s, total=5.692 s; sync files=12, longest=0.003 s, average=0.001 s; distance=260 kB, estimate=260 kB; lsn=0/19604F0, redo lsn=0/19604B8
+2026-10-12 23:34:37.914 UTC [722] FATAL:  role "root" does not exist
+2026-10-12 23:37:22.657 UTC [985] FATAL:  role "root" does not exist
+2026-10-12 23:39:55.053 UTC [1226] FATAL:  role "root" does not exist
+23:37:56,807 |-WARN in ch.qos.logback.core.joran.util.beans.BeanDescriptionFactory@46c670a6 - Class 'net.logstash.logback.composite.GlobalCustomFieldsJsonProvider' contains multiple setters for the same property 'customFieldsNode'.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+{"timestamp":"2026-10-12T23:37:58.195216992Z","level":"INFO","logger":"com.techchallenger.oficina360.Oficina360Application","thread":"main","message":"Starting Oficina360Application v0.0.1-SNAPSHOT using Java 21.0.12 with PID 1 (/app/app.jar started by oficina360 in /app)"}
+{"timestamp":"2026-10-12T23:37:58.205347652Z","level":"INFO","logger":"com.techchallenger.oficina360.Oficina360Application","thread":"main","message":"The following 1 profile is active: \"docker\""}
+{"timestamp":"2026-10-12T23:38:03.891802946Z","level":"INFO","logger":"org.springframework.data.repository.config.RepositoryConfigurationDelegate","thread":"main","message":"Bootstrapping Spring Data JPA repositories in DEFAULT mode."}
+{"timestamp":"2026-10-12T23:38:04.244052638Z","level":"INFO","logger":"org.springframework.data.repository.config.RepositoryConfigurationDelegate","thread":"main","message":"Finished Spring Data repository scanning in 342 ms. Found 7 JPA repository interfaces."}
+{"timestamp":"2026-10-12T23:38:08.451432393Z","level":"INFO","logger":"org.springframework.boot.tomcat.TomcatWebServer","thread":"main","message":"Tomcat initialized with port 8081 (http)"}
+{"timestamp":"2026-10-12T23:38:08.543628832Z","level":"INFO","logger":"org.apache.coyote.http11.Http11NioProtocol","thread":"main","message":"Initializing ProtocolHandler [\"http-nio-8081\"]"}
+{"timestamp":"2026-10-12T23:38:08.546276789Z","level":"INFO","logger":"org.apache.catalina.core.StandardService","thread":"main","message":"Starting service [Tomcat]"}
+{"timestamp":"2026-10-12T23:38:08.54653247Z","level":"INFO","logger":"org.apache.catalina.core.StandardEngine","thread":"main","message":"Starting Servlet engine: [Apache Tomcat/11.0.25]"}
+{"timestamp":"2026-10-12T23:38:08.846993674Z","level":"INFO","logger":"org.springframework.boot.web.context.servlet.WebApplicationContextInitializer","thread":"main","message":"Root WebApplicationContext: initialization completed in 10355 ms"}
+{"timestamp":"2026-10-12T23:38:11.640531928Z","level":"INFO","logger":"com.zaxxer.hikari.HikariDataSource","thread":"main","message":"HikariPool-1 - Starting..."}
+{"timestamp":"2026-10-12T23:38:14.405570995Z","level":"ERROR","logger":"org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers","thread":"main","message":"Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/techchallenger/oficina360/frameworks/security/JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'usuarioGatewayImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/techchallenger/oficina360/frameworks/adapters/UsuarioGatewayImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.techchallenger.oficina360.frameworks.persistence.repositories.UsuarioRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'"}
+{"timestamp":"2026-10-12T23:38:14.485735373Z","level":"INFO","logger":"org.apache.catalina.core.StandardService","thread":"main","message":"Stopping service [Tomcat]"}
+{"timestamp":"2026-10-12T23:38:14.494137135Z","level":"WARN","logger":"org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext","thread":"main","message":"Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server"}
+{"timestamp":"2026-10-12T23:38:14.579292979Z","level":"INFO","logger":"org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger","thread":"main","message":"\n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled."}
+{"timestamp":"2026-10-12T23:38:14.596665426Z","level":"ERROR","logger":"org.springframework.boot.SpringApplication","thread":"main","message":"Application run failed","stack_trace":"org.springframework.context.ApplicationContextException: Unable to start web server\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)\n\tat org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:321)\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)\n\tat com.techchallenger.oficina360.Oficina360Application.main(Oficina360Application.java:10)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106)\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)\n\tat org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)\nCaused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat\n\tat org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150)\n\tat org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110)\n\tat org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:429)\n\tat org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:167)\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190)\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)\n\t... 13 common frames omitted\nCaused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/techchallenger/oficina360/frameworks/security/JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'usuarioGatewayImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/techchallenger/oficina360/frameworks/adapters/UsuarioGatewayImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.techchallenger.oficina360.frameworks.persistence.repositories.UsuarioRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'\n\tat org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)\n\tat org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1380)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)\n\tat org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231)\n\tat org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:185)\n\tat org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:180)\n\tat org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:165)\n\tat org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:97)\n\tat org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53)\n\tat org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55)\n\tat org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4605)\n\tat org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:170)\n\tat org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1204)\n\tat org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1200)\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\n\tat org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:92)\n\tat java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)\n\tat org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:732)\n\tat org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:794)\n\tat org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:170)\n\tat org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1204)\n\tat org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1200)\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\n\tat org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:92)\n\tat java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)\n\tat org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:732)\n\tat org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)\n\tat org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:170)\n\tat org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)\n\tat org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:170)\n\tat org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:871)\n\tat org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:170)\n\tat org.apache.catalina.startup.Tomcat.start(Tomcat.java:452)\n\tat org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131)\n\t... 18 common frames omitted\nCaused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'usuarioGatewayImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/techchallenger/oficina360/frameworks/adapters/UsuarioGatewayImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.techchallenger.oficina360.frameworks.persistence.repositories.UsuarioRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'\n\tat org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)\n\tat org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1380)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)\n\tat org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1769)\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1658)\n\tat org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)\n\tat org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)\n\t... 58 common frames omitted\nCaused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'usuarioRepository' defined in com.techchallenger.oficina360.frameworks.persistence.repositories.UsuarioRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1710)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)\n\tat org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229)\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1769)\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1658)\n\tat org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912)\n\tat org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)\n\t... 72 common frames omitted\nCaused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)\n\tat org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)\n\tat org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1360)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356)\n\t... 86 common frames omitted\nCaused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: The connection attempt failed.\n-------------------------------------------------------------------------\nSQL State  : 08001\nError Code : 0\nMessage    : The connection attempt failed.\n\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)\n\t... 98 common frames omitted\nCaused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: The connection attempt failed.\n-------------------------------------------------------------------------\nSQL State  : 08001\nError Code : 0\nMessage    : The connection attempt failed.\n\n\tat org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:78)\n\tat org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76)\n\tat org.flywaydb.core.FlywayExecutor.init(FlywayExecutor.java:275)\n\tat org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:120)\n\tat org.flywaydb.core.Flyway.migrate(Flyway.java:181)\n\tat org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811)\n\t... 107 common frames omitted\nCaused by: org.postgresql.util.PSQLException: The connection attempt failed.\n\tat org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:437)\n\tat org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)\n\tat org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)\n\tat org.postgresql.Driver.makeConnection(Driver.java:448)\n\tat org.postgresql.Driver.connect(Driver.java:298)\n\tat com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)\n\tat com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)\n\tat com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)\n\tat com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)\n\tat com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)\n\tat com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)\n\tat com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)\n\tat org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:73)\n\t... 114 common frames omitted\nCaused by: java.net.UnknownHostException: host.docker.internal\n\tat java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)\n\tat java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)\n\tat java.base/java.net.Socket.connect(Socket.java:751)\n\tat org.postgresql.core.PGStream.createSocket(PGStream.java:271)\n\tat org.postgresql.core.PGStream.<init>(PGStream.java:132)\n\tat org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:219)\n\tat org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:365)\n\t... 126 common frames omitted\n"}
+
+Relatorio salvo em: diagnostico-postgres-kind.txt

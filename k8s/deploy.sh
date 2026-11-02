@@ -19,9 +19,9 @@ KUBECTL="${KUBECTL:-sudo k3s kubectl}"
 MANIFESTS=(
   "1-namespace.yaml"
   "3-configmap.yaml"
-  "5-postgres-pvc.yaml"
-  "6-postgres-service.yaml"
-  "7-postgres-deployment.yaml"
+#  "5-postgres-pvc.yaml"
+#  "6-postgres-service.yaml"
+#  "7-postgres-deployment.yaml"
   "8-api-deployment.yaml"
   "9-api-service.yaml"
   "10-hpa.yaml"
@@ -559,7 +559,7 @@ apply_namespace
 configure_secret
 apply_configmap
 #deploy_metrics_server
-deploy_postgres
+#deploy_postgres
 deploy_api
 deploy_api_service
 deploy_hpa
